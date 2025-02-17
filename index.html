@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netrunner Terminal</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
+            text-align: center;
+        }
+        .glitch {
+            font-size: 2em;
+            animation: glitch 1.5s infinite alternate;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px 5px rgba(0, 255, 0, 0.8); }
+            100% { text-shadow: -2px -2px 5px rgba(0, 255, 0, 0.8); }
+        }
+        .container {
+            margin-top: 15%;
+        }
+        .hidden-msg {
+            display: none;
+            margin-top: 20px;
+        }
+        .btn {
+            background-color: #00ff00;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        .riddle {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        .hidden-image {
+            display: none;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+        .binary-msg {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="glitch">ACCESS GRANTED</h1>
+        <p>Welcome, Netrunner.</p>
+        <p class="riddle">I am the beginning of the end, and the end of time and space. I am essential to creation, and I surround every place. Who am I?</p>
+        <img src="small_icon.png" class="hidden-image" id="hiddenImage" onclick="revealBinary()">
+        <button class="btn" onclick="showHiddenImage()">Think Like Sherlock</button>
+        <p class="binary-msg" id="binaryMessage">01001000 01101001 01100111 01101000 00100000 01010100 01100101 01100011 01101000 00101100 00100000 01001100 01101111 01110111 00100000 01001100 01101001 01100110 01100101 00101110 00100000 01010011 01110100 01100001 01111001 00100000 01110011 01100001 01100110 01100101 00100000 01101110 01100101 01110100 01110010 01110101 01101110 01101110 01100101 01110010</p>
+    </div>
+    <script>
+        function showHiddenImage() {
+            document.getElementById("hiddenImage").style.display = "block";
+        }
+        function revealBinary() {
+            document.getElementById("binaryMessage").style.display = "block";
+        }
+    </script>
+</body>
+</html>
